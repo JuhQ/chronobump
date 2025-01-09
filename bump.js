@@ -11,14 +11,25 @@ const chronoversion = require("chronoversion").default;
  * generates a new version using the getVersion function, and writes the updated
  * version back to both files.
  *
+ * @description The script looks for package files in the current working directory
+ * from where the script is executed.
+ *
  * @throws {Error} If unable to read or parse package.json or package-lock.json
  * @throws {Error} If unable to write updated package.json or package-lock.json
  *
  * @returns {void}
  */
 function updatePackageVersion() {
-  const packageJsonPath = path.resolve(__dirname, "package.json");
-  const packageLockJsonPath = path.resolve(__dirname, "package-lock.json");
+  const packageJsonPath = path.resolve(process.cwd(), "package.json");
+  const packageLockJsonPath = path.resolve(process.cwd(), "package-lock.json");
+
+  if (!fs.existsSync(packageJsonPath)) {
+    throw new Error("package.json not found in the current directory");
+  }
+
+  if (!fs.existsSync(packageLockJsonPath)) {
+    throw new Error("package-lock.json not found in the current directory");
+  }
 
   let packageJson;
   let packageLockJson;
