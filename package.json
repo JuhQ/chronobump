@@ -1,0 +1,28 @@
+{
+  "name": "chronobump",
+  "version": "2025.1.1",
+  "main": "bump.js",
+  "scripts": {
+    "bump": "node bump.js",
+    "lint": "npx @biomejs/biome check bump.js",
+    "lint:fix": "npm run lint -- --write",
+    "generate-todo": "leasot -x --reporter markdown 'src/**/*.{js,jsx,ts,tsx,css}' > TODO.md",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "bump",
+    "version",
+    "chronoversion"
+  ],
+  "author": "",
+  "license": "MIT",
+  "description": "Bumps the version of a package.json file",
+  "dependencies": {
+    "chronoversion": "2025.1.3"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "husky": "^9.1.7",
+    "leasot": "^14.4.0"
+  }
+}
