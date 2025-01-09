@@ -20,6 +20,14 @@ function updatePackageVersion() {
   const packageJsonPath = path.resolve(process.cwd(), "package.json");
   const packageLockJsonPath = path.resolve(process.cwd(), "package-lock.json");
 
+  if (!fs.existsSync(packageJsonPath)) {
+    throw new Error("package.json not found in the current directory");
+  }
+
+  if (!fs.existsSync(packageLockJsonPath)) {
+    throw new Error("package-lock.json not found in the current directory");
+  }
+
   let packageJson;
   let packageLockJson;
 
