@@ -1,12 +1,13 @@
 {
   "name": "chronobump",
-  "version": "2025.1.1",
+  "version": "2025.1.2",
   "main": "bump.js",
+  "bin": "bump.js",
   "scripts": {
     "bump": "node bump.js",
     "lint": "npx @biomejs/biome check bump.js",
     "lint:fix": "npm run lint -- --write",
-    "generate-todo": "leasot -x --reporter markdown 'src/**/*.{js,jsx,ts,tsx,css}' > TODO.md",
+    "generate-todo": "leasot -x --reporter markdown '*.{js,jsx,ts,tsx,css}' > TODO.md",
     "prepare": "husky"
   },
   "keywords": [
