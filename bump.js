@@ -11,6 +11,9 @@ const chronoversion = require("chronoversion").default;
  * generates a new version using the getVersion function, and writes the updated
  * version back to both files.
  *
+ * @description The script looks for package files in the current working directory
+ * from where the script is executed.
+ *
  * @throws {Error} If unable to read or parse package.json or package-lock.json
  * @throws {Error} If unable to write updated package.json or package-lock.json
  *
