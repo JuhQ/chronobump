@@ -17,8 +17,8 @@ const chronoversion = require("chronoversion").default;
  * @returns {void}
  */
 function updatePackageVersion() {
-  const packageJsonPath = path.resolve(__dirname, "package.json");
-  const packageLockJsonPath = path.resolve(__dirname, "package-lock.json");
+  const packageJsonPath = path.resolve(process.cwd(), "package.json");
+  const packageLockJsonPath = path.resolve(process.cwd(), "package-lock.json");
 
   let packageJson;
   let packageLockJson;
